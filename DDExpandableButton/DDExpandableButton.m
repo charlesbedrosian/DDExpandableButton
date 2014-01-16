@@ -511,7 +511,10 @@
 	else
 	{
 		NSAssert([obj isKindOfClass:[UIView class]], @"obj must be an UIView class !");
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wundeclared-selector"
 		NSAssert([obj respondsToSelector:@selector(defaultFrameWidth)], @"obj must implement - (CGFloat)defaultFrameWidth !");
+#pragma clang diagnostic pop
 		return obj;
 	}
 }
